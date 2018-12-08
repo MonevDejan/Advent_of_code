@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Box id</title>
+</head>
+<body>
+    <p>To make sure you didn't miss any, you scan the likely candidate boxes again, counting the number <br/>
+        that have an ID containing exactly two of any letter and then separately counting those with exactly three of any letter.<br/>
+         You can multiply those two counts together to get a rudimentary checksum and compare it to what your device predicts.<br/><br/>
+
+            For example, if you see the following box IDs:<br/><br/>
+            
+            abcdef contains no letters that appear exactly two or three times.<br/>
+            bababc contains two a and three b, so it counts for both.<br/>
+            abbcde contains two b, but no letter appears exactly three times.<br/>
+            abcccd contains three c, but no letter appears exactly two times.<br/>
+            aabcdd contains two a and two d, but it only counts once.<br/>
+            abcdee contains two e.<br/>
+            ababab contains three a and three b, but it only counts once.<br/>
+            Of these box IDs, four of them contain a letter which appears exactly twice, and three of them contain a letter which <br/>
+            appears exactly three times. Multiplying these together produces a checksum of 4 * 3 = 12.<br/><br/>
+            
+            What is the checksum for your list of box IDs?<br/><br/>
+            
+            --- Part Two ---<br/>
+            Confident that your list of box IDs is complete, you're ready to find the boxes full of prototype fabric.<br/><br/>
+            
+            The boxes will have IDs which differ by exactly one character at the same position in both strings. <br/>
+            For example, given the following box IDs:<br/><br/>
+    
+            abcde<br/>
+            fghij<br/>
+            klmno<br/>
+            pqrst<br/>
+            fguij<br/>
+            axcye<br/>
+            wvxyz<br/>
+            The IDs abcde and axcye are close, but they differ by two characters (the second and fourth). <br/>
+            However, the IDs fghij and fguij differ by exactly one character, the third (h and u). Those must be the correct boxes.<br/><br/>
+            
+            What letters are common between the two correct box IDs? (In the example above, this is found by removing the differing <br/>
+            character from either ID, producing fgij.)
+        </p>
+
+    <p id="string">fzostwblnqkhpuzxirnevmaycq
+        fzastwblgqkupujxirnevmaucd
+        fzostwbxgakhpujxirnevmayci
+        uzosmwblgqkhlujxirnevmaycd
+        bzostwblgqkhpujxirnenfaycd
+        fzostwblghkhpujxibneemaycd
+        fzostwblgrkkpujxirnevqaycd
+        fzostwblgqkhpkjxirqkvmaycd
+        fzostwblgqdxpujbirnevmaycd
+        fzostwblgykhfujxirfevmaycd
+        fzostwbvgskhpujxirnevmagcd
+        flostwblgokhpuixirnevmaycd
+        fzostwblgzkhppjxirnevxaycd
+        ftosuwblgqkhpujxirnevmeycd
+        fzostkblgqkzpujxirnrvmaycd
+        fuostwbugqkhnujxirnevmaycd
+        frostwblgqkhpujsirneamaycd
+        bzostwblgqkhpajxirnevmuycd
+        fzysttbluqkhpujxirnevmaycd
+        czostgblgqkhpujxirnevmgycd
+        fzostwbcgqkhpujxirnevmavcr
+        vzostwbdgqrhpujxirnevmaycd
+        fzostwblgxkhpujxirnekmdycd
+        fzostwblgdkspzjxirnevmaycd
+        fzoqtwblgquhpujxirnevkaycd
+        fzostwblgqjhfujxirnevmayzd
+        fyostwblgtkhpujxilnevmaycd
+        izostwblzqkhpupxirnevmaycd
+        fzoaurblgqkhpujxirnevmaycd
+        fzostjblgqkhpbjxirbevmaycd
+        fzostwblgqkhpujmirngvmayca
+        fxostwbhgqkhiujxirnevmaycd
+        fzostwblngkhpujxirnemmaycd
+        fzosgwblgqkhpujxirnlvqaycd
+        bpostwblgqkhxujxirnevmaycd
+        fzhstwblgqshpujxirnepmaycd
+        fzootwbegqkhwujxirnevmaycd
+        fzmstwblgqkhmujxirnevsaycd
+        fzostwolgqkhpujxirnevmaysp
+        foostwblgqohpujxirnevmayyd
+        fzostwblgqkhgujxgrnevqaycd
+        fzostwbltqkhjujxipnevmaycd
+        fsostwblgqkhfujxirnevmayck
+        fzostwmlgqkbpujxifnevmaycd
+        fdostwblgqkhsujxirnecmaycd
+        fzostwblgquhpejxiinevmaycd
+        fzoqtwblgqkhkujxirnevmaywd
+        fzostwblmqkmpujxirnyvmaycd
+        fzjstwblgqkhpuyxirneomaycd
+        fzortwblgqkhpzjxprnevmaycd
+        fzosnwulgqkhpujxirnevpaycd
+        fzostwbegqkvpujxirnevmaykd
+        fzostwylzqkypujxirnevmaycd
+        fioshwblgqehpujxirnevmaycd
+        fzostwbliqkhoujxirnesmaycd
+        fzostwblgqkhpujdirnelmqycd
+        fzmstwblgqkhpujxirnnvpaycd
+        fzostwbtgqkhcujxirnevmaycz
+        fzostwblgqkfpujeignevmaycd
+        fzostwbegqkhpuvxirndvmaycd
+        fzostwblgqkcpujxmrnevmaycp
+        fvostwblgqkhpyjxirnevmaycx
+        fzostwblgqkhpufxirnevmzacd
+        fzisjwblglkhpujxirnevmaycd
+        fzosowbliqkhgujxirnevmaycd
+        fzostwblgqkhpujxirnyvmaywl
+        fzostwbllqnzpujxirnevmaycd
+        fzostwblgquhpujxirneomayci
+        fzostwblgqjepujximnevmaycd
+        fzostwblgqrhbujxijnevmaycd
+        fzostoblgqkhpujxirnevmoynd
+        fzortwblgqkhpujxixnevjaycd
+        fzostwhlgqkapujxirnevmaych
+        fzostwblgakhpujxirnevfayct
+        faostwblgqohpljxirnevmaycd
+        fzostwbhgqkhpujxirnyvcaycd
+        fjostwblgqkhpwjxirnevjaycd
+        fzostwblgqklpuixirnevmayxd
+        fzostwblgqkhhujxirncvmayce
+        fzostwblzqkhpzjxkrnevmaycd
+        fzostwblqqkbpujxirnevmcycd
+        ffostwblxqkhpujxirnevmayxd
+        fzostwblgqkhpbuxirnefmaycd
+        szostiblgqkhpujxirnevoaycd
+        fhlstwblgqkhpujxirnevmaycb
+        fzostwblgwfhpujxirnevmayed
+        fyostwblgqkhzujxirnevmayjd
+        fzostwblgqkvrujxirnevmaucd
+        fzestwblghkhpujxirnevmaycq
+        foostwbkgqkhhujxirnevmaycd
+        fpxstwblgqkhpujxirzevmaycd
+        fsostwtlgqmhpujxirnevmaycd
+        feostwelgqkhpumxirnevmaycd
+        fzostwbvgqkhpujkirnevmayce
+        fzmsewblgqahpujxirnevmaycd
+        fzsstsblgkkhpujxirnevmaycd
+        fzostwblgqkhxajxirneumaycd
+        fzostwblmqkhpujyisnevmaycd
+        gzostwblgqkhphjxirnevmavcd
+        fzostwblgckgpujxirnzvmaycd
+        qzostdblgqkhpujxirnevmaywd
+        fzoshwblgskhpufxirnevmaycd
+        fzosdwblgqkhpujkirnevjaycd
+        fzvstwblgqkhpuixdrnevmaycd
+        szostwblgqxhpujeirnevmaycd
+        fzosvwblgtkhpujxirnevmoycd
+        fzoscwblgqkkpujxirnevmvycd
+        fzostsblgqnlpujxirnevmaycd
+        fzostwblgmkhpujxlrnevjaycd
+        fzosnwblgqklpugxirnevmaycd
+        fcostwblgqpmpujxirnevmaycd
+        ozostwblgbkhpujxirnevmafcd
+        fzostwbagqkhiujxirneemaycd
+        fzosxwblgqkhpumxirneymaycd
+        fpostkblgqkhpujxianevmaycd
+        fzostwblgvkhhujxirnevmaycl
+        fzobtwtlgqkhpuwxirnevmaycd
+        fzostwvwgqkhpujxirtevmaycd
+        xzostwglgqkhpujtirnevmaycd
+        fzostwblgvkhtujxirnzvmaycd
+        jzostwblgqkhpujxirrevmvycd
+        pzostwbagqkhpujxirnevjaycd
+        fzostwclgqkhpujxirnhvmeycd
+        fzostwblglkhpujxirnevmayrf
+        fzoskwblnqkhpujxirnevmaysd
+        fzostbblgqkhpujxirnevmjycw
+        fzostwblggobpujxirnevmaycd
+        fzostwblgckhpijxirnevmayxd
+        fiostwrlgqkhpujxirnevmayck
+        frfstwblvqkhpujxirnevmaycd
+        fzowvwblgqkhpujsirnevmaycd
+        fzostwblgquhgujxirnevmiycd
+        fzoztwblgqkhpujxvrnevmaycj
+        fzostnbtgqkhpujxixnevmaycd
+        fzfstwblgjkrpujxirnevmaycd
+        fzostwblpqkhpdrxirnevmaycd
+        fivstwblgqkhpuixdrnevmaycd
+        fzostwbpgqkhpdjxirnewmaycd
+        fzostwblgqkhpdjxsrngvmaycd
+        fzostwblsqkhpujxisnxvmaycd
+        fcosvwblgqkhpujxirnevmavcd
+        fzostwrlgekhgujxirnevmaycd
+        fzostwblgqkhpujxindeimaycd
+        uzostwblgqshpujxirnevmwycd
+        fzostwzliqkhpujxirnevmaycu
+        zzostwbtgqkhpijxirnevmaycd
+        fzoltwblgqkhpujxinncvmaycd
+        fzostwblgqkzpujxprnevmayhd
+        fqostwblgqkhpujrirnevmzycd
+        jzostwblgqkhpuzxkrnevmaycd
+        fzostwblgqkhpuwxirszvmaycd
+        fzostwblgqkhpxjxilnevdaycd
+        fpmstwblgqkhpujxirnwvmaycd
+        fzoejwblqqkhpujxirnevmaycd
+        fzostwblgkshzujxirnevmaycd
+        fzoatqblgqxhpujxirnevmaycd
+        fzostwblgpkhpujiipnevmaycd
+        fzostwblgqghpujgbrnevmaycd
+        izosowblgqkhpujxirnejmaycd
+        fzostwblgqthpujxjrnevmalcd
+        fzovtwbcgqkhpujxicnevmaycd
+        fzoatwblgqkhpujxidntvmaycd
+        kzpstwblgqihpujxirnevmaycd
+        fzosawnlgqkhpujxibnevmaycd
+        fzostwblgqkhpujxarnevdajcd
+        bzostwblgqkhpujxvrnevmrycd
+        fzostwblgqkhpwfxirnevmazcd
+        fzostwblgqknpujyiqnevmaycd
+        zzostwblgqkhpujyirneqmaycd
+        flosiwblgqihpujxirnevmaycd
+        fzoetwblgqkhxujxirnevmeycd
+        fznstwbugqkhpujxibnevmaycd
+        fzbstwblgqkhpudxitnevmaycd
+        fzostwblgqkhkujxirnexaaycd
+        fzohthblgqkhpujxiknevmaycd
+        fzostwblgqkhpujxirnevvayjt
+        fzostwblggkhpujxirnrvqaycd
+        fzostwblgqslpujxirnevmaysd
+        aoostwblgqkhpnjxirnevmaycd
+        fzostwblgqkhlutxirnevuaycd
+        fxostwbugqkhpujxirnexmaycd
+        fzoftwblgqkhpsjxirnevmaywd
+        fzbstwblgqkhndjxirnevmaycd
+        fzostwblgqkhpxjxipnlvmaycd
+        fzostwbloqkhowjxirnevmaycd
+        fzostwblgqkcpdjxirnevnaycd
+        vzostiblgqkhpsjxirnevmaycd
+        fzostwblgqkhazjxirnevmaycg
+        fzostaklgqkhpujxirnevmaypd
+        fzostwblgkkhppjxirnevpaycd
+        izostwblgqkhpujairhevmaycd
+        fzostwdlgqkhpuqxzrnevmaycd
+        fzostwblgqkepujxernevmayct
+        fzostdblgqkhpujxyrnehmaycd
+        fzostwblgqkhsujxirnenfaycd
+        fzostwblgqkhpujxifnevmajld
+        fzostwblgokhpujxirxemmaycd
+        fzastwblcqkhpujxiruevmaycd
+        fzostwsxgqkhpuexirnevmaycd
+        xzosxwblgqkhpujxirnetmaycd
+        fzostwblgqkhpuexirnevmkccd
+        fzostwblgqklpujxirnermfycd
+        fzoetwblgqkhpujxirnehhaycd
+        ffostwblgvkhpujxirnevmazcd
+        fcosywblgqkhpujxirnevmaycy
+        fzmstwblgqkhpujxdrnevmaycl
+        fpostwblgqahpujxirnqvmaycd
+        fzostwbmgqkhpulxornevmaycd
+        fzostwblgqkopujxqrnevmrycd
+        fzostwblgqkhpujxisnevmjgcd
+        fzogtwulfqkhpujxirnevmaycd
+        fzostwalgqkhpcjxirnevmayud
+        fzosxwblgqkhpujxirnevmasmd
+        fzostwblgrkowujxirnevmaycd
+        fzostsblgqkhpujxirnevmsccd
+        fzostwblgqkhpujxfrnnvmaocd
+        fzostwblgqkhpujxiynsvkaycd
+        fzosowblgqkhpwjxirnevmaecd
+        fzosgwblgfkhpujxyrnevmaycd
+        fzostsblgzkhpujmirnevmaycd
+        fzostwblrqkhyuixirnevmaycd
+        qzostwblgqkhpujxyrnevmvycd
+        lzostwblgqkhpujxirqevmaymd
+        fzostwblgqkbpujxirnefbaycd
+        fzostwblgmihpujxirnevmafcd
+        fzostmblgqkhpujxirnevmpynd
+        fzoltwblgqkhpujlihnevmaycd
+        fzostwblgqkhpujdirneviyycd
+        fzgspwblgqkhpqjxirnevmaycd
+        fzostwblgqkhtujkirnevmayld
+        fjostwblgqkhpagxirnevmaycd
+        fzpsthblgqkhpuzxirnevmaycd
+        fzostwblgqkhpuhxzrneymaycd
+        fzoftwblgqkepujxirnevcaycd
+        fzostwblgqkbpyjxipnevmaycd
+        fzostwqlgqkhpujxirjevmayad
+        fzoxtwblgqkypupxirnevmaycd
+        fzostwblgqwhpuoxiynevmaycd
+        fzostwblgqkhpfjkirnevmavcd
+        fzoqtwblgqkhpujxirnermaycp
+        fzostwbngxkhpujxirnevmayqd
+        fzostwqogqkhpcjxirnevmaycd
+        fzostwblyqkhpujxvrnevmayzd
+        vzostwblgqkhpujxirnevmlzcd
+        fzostwblaqkhpujxirnevbajcd
+        fdostwblgqkhpujxzrnevmayod
+        fzostxbloqkhpujxirnevmcycd
+        fzostwbcgqkhpyjxirnegmaycd
+        fzostwblgqkhpuyxirnzrmaycd
+        fzustwycgqkhpujxirnevmaycd 
+    </p>
+
+    
+
+    <script src="scaning_box_id.js"></script>
+</body>
+</html>
