@@ -858,44 +858,29 @@ QRW)9MD
 LVF)MGV
 RFM)NDH`;
 
-let test = `COM)B
-B)C
-C)D
-D)E
-E)F
-B)G
-G)H
-D)I
-E)J
-J)K
-K)L
-K)YOU
-I)SAN`;
+const getAncestors = property => property in starMap ? [ ...getAncestors(starMap[property]), starMap[property] ] : [];
+const getAncestorCount = property => property in starMap ? 1 + getAncestorCount(starMap[property]) : 0;
 
-const starMap = input.split('\n').reduce((map, line) => {
-    map[line.split(')')[1]] = line.split(')')[0];
-    return map;
-  }, {});
+const starMap = input.split('\n').reduce((accumulator, element) => {
+  accumulator[element.split(')')[1]] = element.split(')')[0];
+  return accumulator;
+}, {});
 
-  
-const getAncestorCount = body => body in starMap ? 1 + getAncestorCount(starMap[body]) : 0;
 let keysArray = Object.keys(starMap);
-let result = keysArray.reduce((sum, body) => sum + getAncestorCount(body), 0);
+let result = keysArray.reduce((sum, property) => sum + getAncestorCount(property), 0);
 console.log(result);
-
-const getAncestors = body => body in starMap ? [ ...getAncestors(starMap[body]), starMap[body] ] : [];
 
 let youAncestors = getAncestors('YOU');
 let santaAncestors = getAncestors('SAN');
-
-
 
 let i = 0;
 while(youAncestors[i] === santaAncestors[i]){
     i++;
 }
-
 youAncestors = youAncestors.slice(i);
 santaAncestors = santaAncestors.slice(i);
 console.log(youAncestors.length + santaAncestors.length);
+
+
+
 
