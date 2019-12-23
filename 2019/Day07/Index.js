@@ -4,26 +4,25 @@ const parameterCount = { 1: 3, 2: 3, 3: 1, 4: 1, 5: 2, 6: 2, 7: 3, 8: 3, 9: 1, 9
 
 const getIndexes = (modes, iPointer, input, relativeBase) => {
     const indexes = [];
-    // console.log("input",input )
     modes.forEach((mode, index) => {
 
+        const position = iPointer + index+ 1;
         if (mode === 0) {
-            indexes.push(input[iPointer + index + 1])
+            indexes.push(input[position])
         }
         if (mode === 1) {
-            indexes.push(iPointer + index + 1);
+            indexes.push(position);
         }
         if (mode === 2) {
-            indexes.push(input[iPointer + index + 1 + relativeBase])
+            indexes.push(input[position] + relativeBase);
         }
     })
-    // console.log("indexes", indexes)
     return indexes;
 }
 
 function* amplifier(puzzleString, inputSignal) {
     let inputArray = puzzleString.split(",").map(x => Number(x));
-    const relativeBase = 0;
+    let relativeBase = 0;
     let instructionpointer = 0;
 
     function processOpcode(inputSignal) {
@@ -80,7 +79,7 @@ function* amplifier(puzzleString, inputSignal) {
                     break;
                 }
                 case 9: {
-                    console.log("case 9 entered");
+                    relativeBase += inputArray[indexes[0]];
                     i += parameterCount[opcode] + 1;
                     break;
                 }
