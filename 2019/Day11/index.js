@@ -164,22 +164,22 @@ const getPaintedArea = (puzzleString, input) => {
 }
 
 const part1 = () => {
-    const mainObject = getPaintedArea(input, 0);
+    const paintingCoordinates = getPaintedArea(input, 0);
     let sum = 0;
-    for (const property in mainObject) {
-        if(mainObject[property].painted) {sum ++};
+    for (const property in paintingCoordinates) {
+        if(paintingCoordinates[property].painted) {sum ++};
     }
     console.log(sum);   
 }
 
 const part2 = () => {
-    const mainObject2 = getPaintedArea(input, 1);
+    const paintingCoordinates = getPaintedArea(input, 1);
     const arrayToPrint = [new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array()];
     
-    for (const property in mainObject2) {
+    for (const property in paintingCoordinates) {
         const coordinates = property.split(',').map(x => Number(x) < 0 ? Number(x) * -1 : Number(x));
         
-    mainObject2[property].value === 1 ?
+    paintingCoordinates[property].value === 1 ?
         arrayToPrint[coordinates[1]][coordinates[0]] = '#' :
         arrayToPrint[coordinates[1]][coordinates[0]] = ' ';
     }
