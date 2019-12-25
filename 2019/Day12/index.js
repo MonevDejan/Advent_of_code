@@ -85,30 +85,31 @@ const part1 = (steps, moons) => {
 part1(1000, copyOfMoons1);
 
 const checkAxisX = (moons, firstPosition) => {
-    for (let i = 0; i < moons.length; i++) {
-        if (moons[i].posx !== firstPosition[i].posx || moons[i].velx !== firstPosition[i].velx) {
-            return false;
-        }
+    // to skip one 2 checks
+    const isPosSame = moons[0].posx === firstPosition[0].posx && moons[1].posx === firstPosition[1].posx;
+    const isVelSame = moons[0].velx === firstPosition[0].velx && moons[1].velx === firstPosition[1].velx;
+    if(isPosSame && isVelSame){
+        return true;
     }
-    return true;
+    return false;
 }
 
 const checkAxisY = (moons, firstPosition) => {
-    for (let i = 0; i < moons.length; i++) {
-        if (moons[i].posy !== firstPosition[i].posy || moons[i].vely !== firstPosition[i].vely) {
-            return false;
-        }
+    const isPosSame = moons[0].posy === firstPosition[0].posy && moons[1].posy === firstPosition[1].posy;
+    const isVelSame = moons[0].vely === firstPosition[0].vely && moons[1].vely === firstPosition[1].vely;
+    if(isPosSame && isVelSame){
+        return true;
     }
-    return true;
+    return false;
 }
 
 const checkAxisZ = (moons, firstPosition) => {
-    for (let i = 0; i < moons.length; i++) {
-        if (moons[i].posz !== firstPosition[i].posz || moons[i].velz !== firstPosition[i].velz) {
-            return false;
-        }
+    const isPosSame = moons[0].posz === firstPosition[0].posz && moons[1].posz === firstPosition[1].posz;
+    const isVelSame = moons[0].velz === firstPosition[0].velz && moons[1].velz === firstPosition[1].velz;
+    if(isPosSame && isVelSame){
+        return true;
     }
-    return true;
+    return false;
 }
 
 const getPeriodes = (moons, firstPosition) => {
